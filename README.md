@@ -3,5 +3,5 @@
 cd backend 
 npm run dev 
 ไปรันไฟล์ 
-index.html 
+index.html open live Server
 ใน frontend 

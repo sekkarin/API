@@ -1,7 +1,7 @@
 async function init() {
     console.log("init");
     try {
-        const allRestaurant = await fetch("http://localhost:3000/restaurant",
+        const allRestaurant = await fetch("http://127.0.0.1:3001/restuarants",
             {
                 method: "GET",
                 mode: 'cors', cache: 'no-cache',
@@ -26,12 +26,11 @@ const addRestaurant = (data) => {
     item.style = 'max-width:20rem'
     const card = `<img class="card-img-top" src="${data.ImageURL}" alt="restaurant">
     <div class="card-body">
-        <h5 class="card-title>${data.name}</h5>
+        <h5 class="card-title">${data.name}</h5>
         <p class="card-text">${data.type}</p>
         <a href="" class="btn btn-danger" onclick="deleteRestaurant(${data.id})" >Delete</a>
-        <a href="" class="btn btn-warning col-xs-2">
-        Edit
-    </a>
+        <a href="./edit.html?id=${data.id}" class="btn btn-warning col-xs-2">
+        Edit </a>
     </div>
     `
     item.innerHTML = card
